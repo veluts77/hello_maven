@@ -13,5 +13,5 @@ class HelloController {
     fun root() = "This is 'Hello Maven' application!!! Accessed at ${LocalDateTime.now()}."
 	
     @GetMapping("/about")
-    fun about() = "Created by me!"
+    fun about() = "Created by me!!!"
 }
