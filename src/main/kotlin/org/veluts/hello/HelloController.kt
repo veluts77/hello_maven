@@ -14,4 +14,7 @@ class HelloController {
 	
     @GetMapping("/about")
     fun about() = "Created by me!!!"
+	
+ 	@GetMapping("/hello")
+    fun hello() = "change by Olja"
 }
