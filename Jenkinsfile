@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                sh 'echo "Start building :)"'
                 sh 'mvn clean package'
+                sh 'echo "Stop building :)"'
             }
         }
     }
