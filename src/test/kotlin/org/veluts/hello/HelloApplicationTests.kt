@@ -38,7 +38,7 @@ class HelloApplicationTests {
     @Test
     @Throws(Exception::class)
     fun aboutShouldReturnDefaultMessage() {
-        assertThat(endpoint("about")).doesNotStartWith("Created by")
+        assertThat(endpoint("about")).startsWith("Created by")
     }
 
     private fun endpoint(name: String) = restTemplate.getForObject("http://localhost:$port/$name",
