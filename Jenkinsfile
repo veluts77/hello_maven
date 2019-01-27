@@ -13,10 +13,16 @@ pipeline {
                 sh 'echo "Stop building :)"'
             }
         }
+        stage('test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
     }
     post {
         always {
-            echo 'This will always run'
+            archiveArtifacts artifacts: 'target/**/*.jar', fingerprint: true
+            junit 'target/surefire-reports/**/*.xml'
         }
         success {
             echo 'This will run only if successful'
