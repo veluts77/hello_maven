@@ -5,7 +5,7 @@ pipeline {
         DB_ENGINE    = 'sqlite'
     }
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
                 sh 'echo "Start building :)"'
                 sh 'printenv'
@@ -13,7 +13,7 @@ pipeline {
                 sh 'echo "Stop building :)"'
             }
         }
-        stage('test') {
+        stage('Test') {
             steps {
                 sh 'mvn test'
             }
