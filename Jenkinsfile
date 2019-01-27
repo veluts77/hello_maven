@@ -9,7 +9,7 @@ pipeline {
             steps {
                 sh 'echo "Start building :)"'
                 sh 'printenv'
-                sh 'mvn clean package'
+                sh 'mvn clean package -DskipTests'
                 sh 'echo "Stop building :)"'
             }
         }
