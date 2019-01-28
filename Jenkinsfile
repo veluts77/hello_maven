@@ -15,7 +15,16 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'mvn test'
+                script {
+                    try {
+                        echo 'Running tests...'
+                        sh 'mvn test'
+                    }
+                    catch (exc) {
+                        echo 'Testing failed!'
+                        currentBuild.result = 'UNSTABLE'
+                    }
+                }
             }
         }
     }
